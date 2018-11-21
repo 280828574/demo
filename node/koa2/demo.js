@@ -8,4 +8,4 @@ util.promisify(fs.readFile)('./package.json')
 })
 .catch(err =>{
     console.log(err);
-})
+});

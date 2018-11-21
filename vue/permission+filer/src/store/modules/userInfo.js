@@ -1,6 +1,6 @@
 const state = {
     userInfo: {
-        role: ['admin', 'see', 'set']
+        role: ['admin']
     },
     result: ''
 };
@@ -11,11 +11,21 @@ const mutations = {
         } else {
             state.result = false;
         }
+    },
+    inquireUserInfo(state, type) {
+        if (type === 1) {
+            state.userInfo.role[0] = 'admin';
+        } else {
+            state.userInfo.role[0] = 'admin1';
+        }
     }
 };
 const actions = {
     setResult({ commit }, result) {
         commit('inquireRole', result);
+    },
+    setUserInfo({ commit }, result) {
+        commit('inquireUserInfo', result);
     }
 };
 export default {

@@ -1,13 +1,7 @@
 <template>
-    <div class="view-page-wrapper">
-        <div class="absolute-fixed-wrapper">
-            <div class="absolute-fixed-scroll-wrapper">
-                <div class="about">
-                    it's about!
-                    <router-link to="/">index</router-link>
-                </div>
-            </div>
-        </div>
+    <div class="wrapper">
+        <p><router-link to="/">index</router-link></p>
+        <p><router-link to="/login">login</router-link></p>
     </div>
 </template>
 
