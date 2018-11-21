@@ -1,4 +1,4 @@
-*.js linguist-language=jss
-*.css linguist-language=jss
-*.html linguist-language=jss
-*.vue linguist-language=jss
+*.js linguist-language=js
+*.css linguist-language=js
+*.html linguist-language=js
+*.vue linguist-language=js
