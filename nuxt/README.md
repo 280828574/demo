@@ -1,1 +1,0 @@
-Nuxt VueX Demo

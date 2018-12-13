@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="index-wrap">
     <p @click="classes">点我</p>
   </div>
 </template>
@@ -34,9 +34,16 @@
                     }
                 );
                 if (res.success) {
-                    console.log(1);
+                    // console.log(1);
                 }
             }
         },
     }
 </script>
+<style lang="scss">
+  .index-wrap{
+    p{
+      cursor: pointer;
+    }
+  }
+</style>
