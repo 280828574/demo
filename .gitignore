@@ -10,6 +10,7 @@ npm-debug.log
 # Nuxt generate
 dist
 .idea
+yto2
 
 
 .DS_Store
