@@ -8,7 +8,7 @@ module.exports = {
         port: 8080,
         proxy: {
             '/api': {
-                target: 'http://admin.51pm.damei.org',   // 你请求的第三方接口
+                target: 'http://web.51pm.local',   // 你请求的第三方接口
                 changeOrigin: true,
                 secure: false,
                 logLevel: 'debug',

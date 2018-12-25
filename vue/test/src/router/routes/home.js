@@ -1,7 +1,7 @@
 const base = [
     {
         path: '/',
-        name:'index',
+        name:'接口测试',
         component: (resolve) => {
             require.ensure(['@/views/index'], (require) => {
                 resolve(require('@/views/index'));
@@ -19,7 +19,7 @@ const base = [
     },
     {
         path: '/asyn',
-        name: 'asyn',
+        name: '异步组件',
         component: (resolve) => {
             require.ensure(['@/views/asyn'], (require) => {
                 resolve(require('@/views/asyn'));
@@ -28,10 +28,19 @@ const base = [
     },
     {
         path: '/asyn1',
-        name: 'asyn1',
+        name: '高级异步组件',
         component: (resolve) => {
             require.ensure(['@/views/asyn1'], (require) => {
                 resolve(require('@/views/asyn1'));
+            });
+        },
+    },
+    {
+        path: '/maxHeight',
+        name: '最大高度滑动动画',
+        component: (resolve) => {
+            require.ensure(['@/views/maxHeight'], (require) => {
+                resolve(require('@/views/maxHeight'));
             });
         },
     }

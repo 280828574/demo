@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import '@/assets/styles';
 import App from './App.vue'
 import api from './api';
 import constant from '@/constant';

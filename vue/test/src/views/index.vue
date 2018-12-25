@@ -1,6 +1,6 @@
 <template>
   <div class="index-wrap">
-    <p @click="classes">点我</p>
+    <p @click="classes">点我获取接口数据</p>
   </div>
 </template>
 <script>
