@@ -43,6 +43,15 @@ const base = [
                 resolve(require('@/views/maxHeight'));
             });
         },
+    },
+    {
+        path: '/searchDome',
+        name: '搜索防抖上下选择',
+        component: (resolve) => {
+            require.ensure(['@/views/searchDome'], (require) => {
+                resolve(require('@/views/searchDome'));
+            });
+        },
     }
 ];
 
