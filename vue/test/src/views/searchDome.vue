@@ -2,7 +2,7 @@
     <div class="about-wrap">
         <div class="search-wrap">
             <input type="text" class="" id="inp" v-model="value" @focus="showResult" @blur="cloceResult"/>
-            <ul v-show="isShowResult">
+            <ul :class="[{'show-sub':isShowResult},{'hide-sub':!isShowResult}]">
                 <li v-for="(item,key) in restaurants" :key="key" @click="clickResult(item.value)"
                     :class="{act:Number(key) === actIndex}">
                     {{item.value.slice(0,item.value.toLowerCase().indexOf(value.toLowerCase()))}}
@@ -54,6 +54,7 @@
                             me.value = me.restaurants[me.actIndex].value;
                             me.actIndex = '';
                             me.isShowResult = false;
+                            inp.focus();
                             return;
                         }
                         if (event.keyCode === 40) {
@@ -71,6 +72,7 @@
             // 显示结果
             showResult() {
                 this.isShowResult = true;
+                this.filterValue();
             },
             // 关闭结果
             cloceResult() {
@@ -107,6 +109,8 @@
             // 点击结果
             clickResult(value) {
                 this.value = value;
+                let inp = document.getElementById('inp');
+                inp.focus();
             },
             // 防抖
             debounce(fn) {
@@ -155,6 +159,7 @@
             }
             ul{
                 background: #fff;
+                overflow: hidden;
                 width: 500px;
                 padding:0 15px;
                 margin-top:5px ;
@@ -172,6 +177,14 @@
                 }
                 li:last-child{
                     border: none;
+                }
+                &.show-sub{
+                    max-height: 500px;
+                    transition: max-height 1s
+                }
+                &.hide-sub{
+                    max-height: 0;
+                    transition: max-height .5s
                 }
             }
         }
