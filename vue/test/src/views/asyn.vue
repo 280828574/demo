@@ -9,6 +9,7 @@
             <later2></later2>
         </template>
         <button @click="toggle">加载</button>
+        <img src="" alt="" class="img"/>
     </div>
 </template>
 <script>
@@ -39,4 +40,11 @@
     }
 </script>
 <style>
+    .img{
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: url("~@/assets/logo.png") no-repeat 100% 100%;
+        background-size: cover;
+    }
 </style>
