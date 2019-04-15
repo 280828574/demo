@@ -18,8 +18,6 @@
             this.$router.options.routes.forEach(item => {
                 this.routers.push(item)
             })
-        },
-        mounted: function () {
         }
     }
 </script>
@@ -41,6 +39,10 @@
             &.router-link-exact-active {
                 color: #42b983;
             }
+            &.router-link-active{
+                color: #42b983;
+            }
         }
     }
+
 </style>

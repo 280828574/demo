@@ -1,6 +1,6 @@
 const base = [
     {
-        path: '/',
+        path: '/index',
         name:'接口测试',
         component: (resolve) => {
             require.ensure(['@/views/index'], (require) => {
@@ -52,7 +52,37 @@ const base = [
                 resolve(require('@/views/searchDome'));
             });
         },
-    }
+    },
+    {
+        path: '/api',
+        name: 'vue-API',
+        component: (resolve) => {
+            require.ensure(['@/views/api/api'], (require) => {
+                resolve(require('@/views/api/api'));
+            });
+        },
+        redirect: {name:'observable'},
+        children:[
+            {
+                path: '/api/observable',
+                name:'observable',
+                component: (resolve) => {
+                    require.ensure(['@/views/api/observable'], (require) => {
+                        resolve(require('@/views/api/observable'));
+                    });
+                },
+            },
+            {
+                path: '/api/aaa',
+                name:'aaa',
+                component: (resolve) => {
+                    require.ensure(['@/views/api/aaa'], (require) => {
+                        resolve(require('@/views/api/aaa'));
+                    });
+                },
+            }
+        ]
+    },
 ];
 
 export default base;

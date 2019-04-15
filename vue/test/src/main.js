@@ -11,6 +11,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$api = api;
 Vue.prototype.$const = constant;
 Vue.prototype.$scripts = scripts;
+// Waypoint plugin
 new Vue({
       router,
       store,
