@@ -83,6 +83,36 @@ const base = [
             }
         ]
     },
+    {
+        path: '/plugIn',
+        name: 'plugIn',
+        component: (resolve) => {
+            require.ensure(['@/views/plugIn/plugIn'], (require) => {
+                resolve(require('@/views/plugIn/plugIn'));
+            });
+        },
+        redirect: {name:'particles'},
+        children:[
+            {
+                path: '/plugIn/particles',
+                name:'particles',
+                component: (resolve) => {
+                    require.ensure(['@/views/plugIn/vue-particles'], (require) => {
+                        resolve(require('@/views/plugIn/vue-particles'));
+                    });
+                },
+            },
+            {
+                path: '/plugIn/aaa',
+                name:'aaa',
+                component: (resolve) => {
+                    require.ensure(['@/views/plugIn/aaa'], (require) => {
+                        resolve(require('@/views/plugIn/aaa'));
+                    });
+                },
+            }
+        ]
+    }
 ];
 
 export default base;

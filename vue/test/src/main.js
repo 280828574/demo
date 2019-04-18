@@ -6,11 +6,13 @@ import constant from '@/constant';
 import scripts from '@/scripts';
 import router from '@/router'
 import store from '@/store'
+import VueParticles from 'vue-particles'
 
 Vue.config.productionTip = false;
 Vue.prototype.$api = api;
 Vue.prototype.$const = constant;
 Vue.prototype.$scripts = scripts;
+Vue.use(VueParticles)
 // Waypoint plugin
 new Vue({
       router,
