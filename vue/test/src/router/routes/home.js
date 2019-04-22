@@ -103,11 +103,11 @@ const base = [
                 },
             },
             {
-                path: '/plugIn/aaa',
-                name:'aaa',
+                path: '/plugIn/kim-vue-touch',
+                name:'kim-vue-touch',
                 component: (resolve) => {
-                    require.ensure(['@/views/plugIn/aaa'], (require) => {
-                        resolve(require('@/views/plugIn/aaa'));
+                    require.ensure(['@/views/plugIn/kim-vue-touch'], (require) => {
+                        resolve(require('@/views/plugIn/kim-vue-touch'));
                     });
                 },
             }
