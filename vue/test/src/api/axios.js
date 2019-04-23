@@ -49,7 +49,7 @@ axios.interceptors.response.use(
     (error) => {
         if (error) {
             console.log('axios.interceptors.response', error);
-        };
+        }
         const err = {
             data: {
                 code: 404,

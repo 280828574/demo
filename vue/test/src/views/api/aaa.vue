@@ -1,24 +1,24 @@
 <template>
     <div class="">
-{{count}}
+        <p>count:{{count}}</p>
     </div>
 </template>
 
 <script>
-    import { store } from "@/components/store";
-export default {
-    name: '',
-    data() {
-        return {
+    import {store} from "@/components/store";
 
-        };
-    },
-    computed: {
-        count() {
-            return store.count;
+    export default {
+        name: '',
+        data() {
+            return {};
+        },
+        computed: {
+            count() {
+                return store.count;
+            },
+
         }
-    },
-};
+    };
 </script>
 
 <style lang="scss">
