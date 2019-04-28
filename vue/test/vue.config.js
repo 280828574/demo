@@ -22,4 +22,11 @@ module.exports = {
             .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
     },
     productionSourceMap: false,
+    css: {
+        loaderOptions: {
+            sass: {
+                data: `@import "@/assets/styles/common/MainBodyColor.scss";`
+            }
+        }
+    }
 };
