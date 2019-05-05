@@ -8,16 +8,21 @@ import router from '@/router'
 import store from '@/store'
 import VueParticles from 'vue-particles'
 import vueTouch from 'kim-vue-touch'
+
 Vue.config.productionTip = false;
 Vue.prototype.$api = api;
 Vue.prototype.$const = constant;
 Vue.prototype.$scripts = scripts;
 Vue.use(VueParticles);
 Vue.use(vueTouch);
+const Bus = new Vue();
 // Waypoint plugin
 new Vue({
-      router,
-      store,
-      render: h => h(App)
-}).$mount('#app')
+    router,
+    store,
+    render: h => h(App),
+    data: {
+        Bus
+    }
+}).$mount('#app');
 

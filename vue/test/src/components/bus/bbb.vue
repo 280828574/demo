@@ -1,5 +1,6 @@
 <template>
     <div class="">
+{{msg}}
     </div>
 </template>
 
@@ -8,9 +9,16 @@ export default {
     name: '',
     data() {
         return {
-
+            msg:'111'
         };
-    }
+    },
+    created(){
+        this.$root.Bus.$on(
+            'setMsg',content=>{
+                this.msg = content
+            }
+        )
+    },
 };
 </script>
 

@@ -1,10 +1,16 @@
 <template>
     <div class="">
+        <ccc></ccc>
     </div>
 </template>
 
 <script>
-export default {
+    import ccc from "@/components/provideAndInject/ccc";
+
+    export default {
+        components: {
+            ccc
+        },
     name: '',
     data() {
         return {

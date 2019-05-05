@@ -73,11 +73,11 @@ const base = [
                 },
             },
             {
-                path: '/api/aaa',
-                name:'aaa',
+                path: '/api/provideAndInject',
+                name:'provideAndInject',
                 component: (resolve) => {
-                    require.ensure(['@/views/api/aaa'], (require) => {
-                        resolve(require('@/views/api/aaa'));
+                    require.ensure(['@/views/api/provideAndInject'], (require) => {
+                        resolve(require('@/views/api/provideAndInject'));
                     });
                 },
             }
@@ -112,7 +112,16 @@ const base = [
                 },
             }
         ]
-    }
+    },
+    {
+        path: '/bus',
+        name: 'bus',
+        component: (resolve) => {
+            require.ensure(['@/views/bus'], (require) => {
+                resolve(require('@/views/bus'));
+            });
+        }
+    },
 ];
 
 export default base;
