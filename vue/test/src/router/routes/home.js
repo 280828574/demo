@@ -122,6 +122,16 @@ const base = [
             });
         }
     },
+    {
+        path: '/cookie',
+        name: 'cookie演示',
+        component: (resolve) => {
+            require.ensure(['@/views/cookie'], (require) => {
+                resolve(require('@/views/cookie'));
+            });
+        }
+    },
+
 ];
 
 export default base;
