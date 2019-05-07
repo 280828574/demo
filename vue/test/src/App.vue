@@ -15,9 +15,20 @@
             };
         },
         created: function () {
-            this.$router.options.routes.forEach(item => {
-                this.routers.push(item)
-            })
+            this.initRoutes();
+        },
+        methods: {
+            initRoutes() {
+                this.routers = [];
+                    this.$store.state.routeLists.routes.forEach(item => {
+                        this.routers.push(item)
+                    });
+            }
+        },
+        watch:{
+            '$store.state.routeLists.routes':function () {
+                this.initRoutes();
+            }
         }
     }
 </script>
