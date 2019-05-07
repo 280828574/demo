@@ -157,6 +157,7 @@ export default {
     methods: {
         addRoutes() {
             this.$store.dispatch('setRouteLists');
+            this.$router.push({ path: '/index' });
         }
     },
 };

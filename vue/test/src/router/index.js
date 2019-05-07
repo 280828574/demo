@@ -9,7 +9,6 @@ const router = new Router({
     routes
 });
 router.beforeEach((to, from, next) => {
-    let routes = window.sessionStorage.getItem('routes');
     if (['/login'].includes(to.path)) {
         next();
     }
@@ -20,8 +19,9 @@ router.beforeEach((to, from, next) => {
     //     });
     // }
     else {
-        if(routes){
-            store.dispatch('setRouteLists',JSON.parse(routes));
+        let setRouteLists = window.sessionStorage.getItem('routes');
+        if(setRouteLists && store.state.routeLists.routes.length ===0){
+            store.dispatch('setRouteLists',JSON.parse(setRouteLists));
         }
         next();
     }

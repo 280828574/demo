@@ -1,6 +1,6 @@
 const base = [
     {
-        path: '/addRoutes',
+        path: '/',
         name:'addRoutes演示',
         component: (resolve) => {
             require.ensure(['@/views/addRoutes'], (require) => {

@@ -20,13 +20,13 @@
         methods: {
             initRoutes() {
                 this.routers = [];
-                    this.$store.state.routeLists.routes.forEach(item => {
-                        this.routers.push(item)
-                    });
+                this.$router.options.routes.forEach(item => {
+                    this.routers.push(item)
+                });
             }
         },
         watch:{
-            '$store.state.routeLists.routes':function () {
+            '$route':function () {
                 this.initRoutes();
             }
         }

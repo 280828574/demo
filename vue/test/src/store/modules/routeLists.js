@@ -1,27 +1,9 @@
-import Router from 'vue-router';
-import routes from '@/router/routes';
+import routes from '@/router';
 const state = {
-    routes : [{
-        path: '/addRoutes',
-        name:'addRoutes演示',
-        component: (resolve) => {
-            require.ensure(['@/views/addRoutes'], (require) => {
-                resolve(require('@/views/addRoutes'));
-            });
-        },
-    },]
+    routes : []
 };
 const mutations = {
     setRouteLists(state, arr = [
-        {
-            path: '/addRoutes',
-            name:'addRoutes演示',
-            component: (resolve) => {
-                require.ensure(['@/views/addRoutes'], (require) => {
-                    resolve(require('@/views/addRoutes'));
-                });
-            },
-        },
         {
             path: '/index',
             name:'接口测试',
@@ -155,14 +137,10 @@ const mutations = {
             }
         },
     ]) {
-        const router = new Router({
-            routes
-        });
-        router.options.routes = state.routes;
-        router.addRoutes(state.routes);
-        router.push({ path: '/index' });
         state.routes = arr;
-        window.sessionStorage.setItem("routes",JSON.stringify(arr));
+        routes.options.routes = state.routes;
+        routes.addRoutes(state.routes);
+        window.sessionStorage.setItem("routes",JSON.stringify(state.routes));
     }
 };
 const actions = {
