@@ -19,10 +19,10 @@ router.beforeEach((to, from, next) => {
     //     });
     // }
     else {
-        let setRouteLists = window.sessionStorage.getItem('routes');
-        if(setRouteLists && store.state.routeLists.routes.length ===0){
-            store.dispatch('setRouteLists',JSON.parse(setRouteLists));
-        }
+        // let setRouteLists = window.sessionStorage.getItem('routes');
+        // if(setRouteLists && store.state.routeLists.routes.length ===0){
+        //     store.dispatch('setRouteLists',JSON.parse(setRouteLists));
+        // }
         next();
     }
 });

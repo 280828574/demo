@@ -136,6 +136,15 @@ const mutations = {
                 });
             }
         },
+        {
+            path: '/slot',
+            name: 'slot演示',
+            component: (resolve) => {
+                require.ensure(['@/views/slot'], (require) => {
+                    resolve(require('@/views/slot'));
+                });
+            }
+        },
     ]) {
         state.routes = arr;
         routes.options.routes = state.routes;
