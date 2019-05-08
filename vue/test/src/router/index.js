@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import store from '@/store';
+// import store from '@/store';
 import routes from './routes';
 
 process.env.NODE_ENV === 'development' && Vue.use(Router);
@@ -19,11 +19,7 @@ router.beforeEach((to, from, next) => {
     //     });
     // }
     else {
-        // let setRouteLists = window.sessionStorage.getItem('routes');
-        // if(setRouteLists && store.state.routeLists.routes.length ===0){
-        //     store.dispatch('setRouteLists',JSON.parse(setRouteLists));
-        // }
-        next();
+        next()
     }
 });
 export default router;

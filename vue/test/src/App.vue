@@ -15,19 +15,26 @@
             };
         },
         created: function () {
+            this.initRoutesList();
             this.initRoutes();
         },
         methods: {
-            initRoutes() {
+            initRoutesList() {
                 this.routers = [];
                 this.$router.options.routes.forEach(item => {
                     this.routers.push(item)
                 });
+            },
+            initRoutes(){
+                let roles = window.sessionStorage.getItem('roles');
+                if(roles){
+                    this.$store.dispatch('setRouteLists',JSON.parse(roles));
+                }
             }
         },
         watch:{
             '$route':function () {
-                this.initRoutes();
+                this.initRoutesList();
             }
         }
     }

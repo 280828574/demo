@@ -1,9 +1,6 @@
 import routes from '@/router';
 const state = {
-    routes : []
-};
-const mutations = {
-    setRouteLists(state, arr = [
+    routes : [
         {
             path: '/index',
             name:'接口测试',
@@ -12,10 +9,12 @@ const mutations = {
                     resolve(require('@/views/index'));
                 });
             },
+            meta: { role: 'index' },
         },
         {
             path: '/base64',
             name: 'base64',
+            meta: { role: 'base64' },
             component: (resolve) => {
                 require.ensure(['@/views/base64'], (require) => {
                     resolve(require('@/views/base64'));
@@ -25,6 +24,7 @@ const mutations = {
         {
             path: '/asyn',
             name: '异步组件',
+            meta: { role: 'asyn' },
             component: (resolve) => {
                 require.ensure(['@/views/asyn'], (require) => {
                     resolve(require('@/views/asyn'));
@@ -34,6 +34,7 @@ const mutations = {
         {
             path: '/asyn1',
             name: '高级异步组件',
+            meta: { role: 'asyn1' },
             component: (resolve) => {
                 require.ensure(['@/views/asyn1'], (require) => {
                     resolve(require('@/views/asyn1'));
@@ -43,6 +44,7 @@ const mutations = {
         {
             path: '/maxHeight',
             name: '最大高度滑动动画',
+            meta: { role: 'maxHeight' },
             component: (resolve) => {
                 require.ensure(['@/views/maxHeight'], (require) => {
                     resolve(require('@/views/maxHeight'));
@@ -52,6 +54,7 @@ const mutations = {
         {
             path: '/searchDome',
             name: '搜索防抖上下选择',
+            meta: { role: 'searchDome' },
             component: (resolve) => {
                 require.ensure(['@/views/searchDome'], (require) => {
                     resolve(require('@/views/searchDome'));
@@ -61,6 +64,7 @@ const mutations = {
         {
             path: '/api',
             name: 'vue-API',
+            meta: { role: 'api' },
             component: (resolve) => {
                 require.ensure(['@/views/api/api'], (require) => {
                     resolve(require('@/views/api/api'));
@@ -71,6 +75,7 @@ const mutations = {
                 {
                     path: '/api/observable',
                     name:'observable',
+                    meta: { role: 'observable' },
                     component: (resolve) => {
                         require.ensure(['@/views/api/observable'], (require) => {
                             resolve(require('@/views/api/observable'));
@@ -80,6 +85,7 @@ const mutations = {
                 {
                     path: '/api/provideAndInject',
                     name:'provideAndInject',
+                    meta: { role: 'provideAndInject' },
                     component: (resolve) => {
                         require.ensure(['@/views/api/provideAndInject'], (require) => {
                             resolve(require('@/views/api/provideAndInject'));
@@ -91,6 +97,7 @@ const mutations = {
         {
             path: '/plugIn',
             name: 'plugIn',
+            meta: { role: 'plugIn' },
             component: (resolve) => {
                 require.ensure(['@/views/plugIn/plugIn'], (require) => {
                     resolve(require('@/views/plugIn/plugIn'));
@@ -101,6 +108,7 @@ const mutations = {
                 {
                     path: '/plugIn/particles',
                     name:'particles',
+                    meta: { role: 'particles' },
                     component: (resolve) => {
                         require.ensure(['@/views/plugIn/vue-particles'], (require) => {
                             resolve(require('@/views/plugIn/vue-particles'));
@@ -110,6 +118,7 @@ const mutations = {
                 {
                     path: '/plugIn/kim-vue-touch',
                     name:'kim-vue-touch',
+                    meta: { role: 'kim-vue-touch' },
                     component: (resolve) => {
                         require.ensure(['@/views/plugIn/kim-vue-touch'], (require) => {
                             resolve(require('@/views/plugIn/kim-vue-touch'));
@@ -121,6 +130,7 @@ const mutations = {
         {
             path: '/bus',
             name: 'bus',
+            meta: { role: 'bus' },
             component: (resolve) => {
                 require.ensure(['@/views/bus'], (require) => {
                     resolve(require('@/views/bus'));
@@ -130,6 +140,7 @@ const mutations = {
         {
             path: '/cookie',
             name: 'cookie演示',
+            meta: { role: 'cookie' },
             component: (resolve) => {
                 require.ensure(['@/views/cookie'], (require) => {
                     resolve(require('@/views/cookie'));
@@ -139,17 +150,30 @@ const mutations = {
         {
             path: '/slot',
             name: 'slot演示',
+            meta: { role: 'slot' },
             component: (resolve) => {
                 require.ensure(['@/views/slot'], (require) => {
                     resolve(require('@/views/slot'));
                 });
             }
         },
-    ]) {
-        state.routes = arr;
-        routes.options.routes = state.routes;
-        routes.addRoutes(state.routes);
-        window.sessionStorage.setItem("routes",JSON.stringify(state.routes));
+    ]
+};
+const mutations = {
+    setRouteLists(state, arr = []) {
+        if(Array.isArray(arr)){
+            let routesList = [];
+            arr.forEach((role)=>{
+                state.routes.forEach((item)=>{
+                    if(item.meta.role === role){
+                        routesList.push(item)
+                    }
+                })
+            });
+            routes.options.routes = routesList;
+            routes.addRoutes(routesList);
+            window.sessionStorage.setItem("roles",JSON.stringify(arr));
+        }
     }
 };
 const actions = {
