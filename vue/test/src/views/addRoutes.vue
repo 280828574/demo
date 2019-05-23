@@ -12,7 +12,10 @@ export default {
     },
     methods: {
         addRoutes() {
-            this.$store.dispatch('setRouteLists',['index','base64']);
+            // 单独设置权限
+            // this.$store.dispatch('setRouteLists',['index','base64']);
+            // 获取所有权限
+            this.$store.dispatch('setRouteLists','admin');
             this.$router.push({ path: '/index' });
         }
     },

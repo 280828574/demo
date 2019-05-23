@@ -157,10 +157,31 @@ const state = {
                 });
             }
         },
+        {
+            path: '/functionalComponent',
+            name: '函数式组件演示',
+            meta: { role: 'functionalComponent' },
+            component: (resolve) => {
+                require.ensure(['@/views/functionalComponent'], (require) => {
+                    resolve(require('@/views/functionalComponent'));
+                });
+            }
+        },
     ]
 };
 const mutations = {
     setRouteLists(state, arr = []) {
+        console.log(arr);
+        if(arr === 'admin'){
+            let routesList = [];
+            state.routes.forEach((item)=>{
+                routesList.push(item)
+            });
+            routes.options.routes = routesList;
+            routes.addRoutes(routesList);
+            window.sessionStorage.setItem("roles",JSON.stringify(arr));
+            return
+        }
         if(Array.isArray(arr)){
             let routesList = [];
             arr.forEach((role)=>{
