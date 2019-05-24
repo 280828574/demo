@@ -91,6 +91,16 @@ const state = {
                             resolve(require('@/views/api/provideAndInject'));
                         });
                     },
+                },
+                {
+                    path: '/api/attrsANDlisteners',
+                    name:'$attrs和$listeners演示',
+                    meta: { role: 'attrsANDlisteners' },
+                    component: (resolve) => {
+                        require.ensure(['@/views/api/attrsANDlisteners'], (require) => {
+                            resolve(require('@/views/api/attrsANDlisteners'));
+                        });
+                    },
                 }
             ]
         },
