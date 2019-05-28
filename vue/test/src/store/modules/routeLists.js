@@ -9,12 +9,12 @@ const state = {
                     resolve(require('@/views/index'));
                 });
             },
-            meta: { role: 'index' },
+            meta: { role: 'index', title: '接口测试'},
         },
         {
             path: '/base64',
             name: 'base64',
-            meta: { role: 'base64' },
+            meta: { role: 'base64', title: 'base64'},
             component: (resolve) => {
                 require.ensure(['@/views/base64'], (require) => {
                     resolve(require('@/views/base64'));
