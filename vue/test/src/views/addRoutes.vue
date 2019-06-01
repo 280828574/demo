@@ -1,6 +1,7 @@
 <template>
     <div class="">
         <button @click="addRoutes">增加路由</button>
+        <div class="box">自由拉伸元素</div>
     </div>
 </template>
 
@@ -23,5 +24,11 @@ export default {
 </script>
 
 <style lang="scss">
-
+    .box{
+        overflow: hidden;/**需要配合overflow才能生效**/
+        resize: both;
+        background: red;
+        width: 150px;
+        height: 150px;
+    }
 </style>
