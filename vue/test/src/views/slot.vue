@@ -9,9 +9,9 @@
                 <div>具名插槽</div>
             </template>
             <!--作用域插槽-->
-            <template #footer="slotProps">
+            <template #footer="slotProps1">
                 <div>
-                    {{slotProps.testProps}}
+                    {{abc(slotProps1.testProps.a)}}
                 </div>
             </template>
         </slotShow>
@@ -28,7 +28,16 @@
         name: '',
         data() {
             return {};
-        }
+        },
+        methods: {
+            abc(a) {
+                if(a>3){
+                    return 2223
+                } else {
+                    return 333
+                }
+            }
+        },
     };
 </script>
 

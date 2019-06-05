@@ -17,7 +17,7 @@
 
         <!-- 作用域插槽 -->
         <footer>
-            <slot name="footer" testProps="子组件的值">
+            <slot name="footer" :testProps="aaa">
                 <h3>没传footer插槽</h3>
             </slot>
         </footer>
@@ -28,8 +28,13 @@
     export default {
         name: '',
         data() {
-            return {};
-        }
+            return {
+                aaa:{
+                    a:2,
+                    b:2
+                }
+            };
+        },
     };
 </script>
 
