@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@types/koa": "^2.0.48"
+  }
+}

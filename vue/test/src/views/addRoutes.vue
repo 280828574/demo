@@ -6,26 +6,29 @@
 </template>
 
 <script>
-export default {
-    name: '',
-    data() {
-        return {};
-    },
-    methods: {
-        addRoutes() {
-            // 单独设置权限
-            // this.$store.dispatch('setRouteLists',['index','base64']);
-            // 获取所有权限
-            this.$store.dispatch('setRouteLists','admin');
-            this.$router.push({ path: '/index' });
-        }
-    },
-};
+    export default {
+        name: '',
+        data() {
+            return {};
+        },
+        mounted() {
+
+        },
+        methods: {
+            addRoutes() {
+                // 单独设置权限
+                // this.$store.dispatch('setRouteLists',['index','base64']);
+                // 获取所有权限
+                this.$store.dispatch('setRouteLists', 'admin');
+                this.$router.push({path: '/index'});
+            }
+        },
+    };
 </script>
 
 <style lang="scss">
-    .box{
-        overflow: hidden;/**需要配合overflow才能生效**/
+    .box {
+        overflow: hidden; /**需要配合overflow才能生效**/
         resize: both;
         background: red;
         width: 150px;
