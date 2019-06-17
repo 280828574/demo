@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>递归生成不重复数组</title>
+</head>
+<body>
+<p>
+    a) 生成一个长度为5的空数组arr。
+</p>
+<p>
+    b) 生成一个（2－32）之间的随机整数rand。
+</p>
+<p>
+    c) 把随机数rand插入到数组arr内，如果数组arr内已存在与rand相同的数字，则重新生成随机数rand并插入到arr内[需要使用递归实现，不能使用for/while等循环]
+</p>
+<p>
+    d) 最终输出一个长度为5，且内容不重复的数组arr。
+</p>
+<p class="arr"></p>
+<script>
+    // 递归生成数组
+    function RecursionArr(arr = []) {
+        if(arr.length>=5){
+            document.querySelector('.arr').innerHTML = `数组为:[${arr}]`;
+            return arr
+        }
+        let num = GenerateNum(1,32);
+        if(!arr.includes(num)){
+            arr.push(num)
+        }
+        return RecursionArr(arr)
+    }
+    // 生成随机整数
+    function GenerateNum(start,end) {
+        return start + ~~(Math.random() * (end - start));
+    }
+    RecursionArr();
+</script>
+</body>
+</html>
