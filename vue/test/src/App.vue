@@ -8,36 +8,36 @@
 </template>
 
 <script>
-    export default {
-        data: function () {
-            return {
-                routers: []
-            };
+export default {
+    data: function () {
+        return {
+            routers: []
+        };
+    },
+    created: function () {
+        this.initRoutesList();
+        this.initRoutes();
+    },
+    methods: {
+        initRoutesList() {
+            this.routers = [];
+            this.$router.options.routes.forEach(item => {
+                this.routers.push(item);
+            });
         },
-        created: function () {
-            this.initRoutesList();
-            this.initRoutes();
-        },
-        methods: {
-            initRoutesList() {
-                this.routers = [];
-                this.$router.options.routes.forEach(item => {
-                    this.routers.push(item)
-                });
-            },
-            initRoutes(){
-                let roles = window.sessionStorage.getItem('roles');
-                if(roles){
-                    this.$store.dispatch('setRouteLists',JSON.parse(roles));
-                }
-            }
-        },
-        watch:{
-            '$route':function () {
-                this.initRoutesList();
+        initRoutes(){
+            let roles = window.sessionStorage.getItem('roles');
+            if(roles){
+                this.$store.dispatch('setRouteLists',JSON.parse(roles));
             }
         }
+    },
+    watch:{
+        '$route':function () {
+            this.initRoutesList();
+        }
     }
+};
 </script>
 
 <style lang="scss">

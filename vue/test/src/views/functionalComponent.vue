@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import functionChild from '@/components/functionalComponent'
+import functionChild from '@/components/functionalComponent';
 export default {
     components: {functionChild},
     data() {

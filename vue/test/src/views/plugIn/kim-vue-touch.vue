@@ -11,20 +11,20 @@
     </div>
 </template>
 <script>
-    export default {
-        name: 'App',
-        data() {
-            return {
-                name: 'touch',
-            }
-        },
-        methods: {
-            vueTouch: function (txt, e) {
-                this.name = txt;
-                console.log(e);
-            }
+export default {
+    name: 'App',
+    data() {
+        return {
+            name: 'touch',
+        };
+    },
+    methods: {
+        vueTouch: function (txt, e) {
+            this.name = txt;
+            console.log(e);
         }
     }
+};
 </script>
 <style lang="scss">
     .box {

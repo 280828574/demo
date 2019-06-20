@@ -2,11 +2,16 @@
     <div class="">
         <button @click="addRoutes">增加路由</button>
         <div class="box">自由拉伸元素</div>
+        <bbb></bbb>
     </div>
 </template>
 
 <script>
+import bbb from '@/components/bus/bbb';
 export default {
+    components:{
+        bbb
+    },
     name: '',
     data() {
         return {};
@@ -27,11 +32,5 @@ export default {
 </script>
 
 <style lang="scss">
-    .box {
-        overflow: hidden; /**需要配合overflow才能生效**/
-        resize: both;
-        background: red;
-        width: 150px;
-        height: 150px;
-    }
+   @import "@/assets/styles/addRoutes.scss"
 </style>

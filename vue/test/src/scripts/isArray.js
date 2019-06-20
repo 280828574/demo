@@ -5,11 +5,11 @@
 const isArray = (arr,len) => {
     if(Array.isArray(arr)){
         if(len){
-            return  arr.length>len
+            return  arr.length>len;
         }
-        return true
+        return true;
     }
-    return false
+    return false;
 };
 export default {
     isArray

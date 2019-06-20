@@ -5,12 +5,12 @@
 </template>
 
 <script>
-    import ccc from "@/components/provideAndInject/ccc";
+import ccc from "@/components/provideAndInject/ccc";
 
-    export default {
-        components: {
-            ccc
-        },
+export default {
+    components: {
+        ccc
+    },
     name: '',
     data() {
         return {

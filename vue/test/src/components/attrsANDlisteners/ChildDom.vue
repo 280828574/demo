@@ -7,10 +7,10 @@
     </div>
 </template>
 <script>
-    import childDomChild from "@/components/attrsANDlisteners/childDomChild.vue";
-    export default {
-        name:'child-dom',
-        props:["foo"],
-        components:{childDomChild},
-    }
+import childDomChild from "@/components/attrsANDlisteners/childDomChild.vue";
+export default {
+    name:'child-dom',
+    props:["foo"],
+    components:{childDomChild},
+};
 </script>

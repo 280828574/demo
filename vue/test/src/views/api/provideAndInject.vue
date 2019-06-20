@@ -8,27 +8,27 @@
 </template>
 
 <script>
-    import {store} from "@/components/store";
-    import bbb from "@/components/provideAndInject/bbb";
+import {store} from "@/components/store";
+import bbb from "@/components/provideAndInject/bbb";
 
-    export default {
-        components: {
+export default {
+    components: {
         bbb
+    },
+    provide:{
+        for:'test'
+    },
+    name: '',
+    data() {
+        return {};
+    },
+    computed: {
+        count() {
+            return store.count;
         },
-        provide:{
-            for:'test'
-        },
-        name: '',
-        data() {
-            return {};
-        },
-        computed: {
-            count() {
-                return store.count;
-            },
 
-        }
-    };
+    }
+};
 </script>
 
 <style lang="scss">

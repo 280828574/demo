@@ -13,31 +13,31 @@
     </div>
 </template>
 <script>
-    import Vue from 'vue';
-    const later = Vue.component('later', function (resolve) {
-        setTimeout(function () {
-            require(['@/components/later.vue'], resolve)
-        }, 3000);
-    });
-    const later2 = Vue.component('later2', function (resolve) {
-        require(['@/components/later2.vue'], resolve)
-    });
-    export default{
-        data: function () {
-            return {
-                show: false
-            };
-        },
-        components: {
-            later,
-            later2,
-        },
-        methods: {
-            toggle:function () {
-                this.show = !this.show;
-            }
-        },
-    }
+import Vue from 'vue';
+const later = Vue.component('later', function (resolve) {
+    setTimeout(function () {
+        require(['@/components/later.vue'], resolve);
+    }, 3000);
+});
+const later2 = Vue.component('later2', function (resolve) {
+    require(['@/components/later2.vue'], resolve);
+});
+export default{
+    data: function () {
+        return {
+            show: false
+        };
+    },
+    components: {
+        later,
+        later2,
+    },
+    methods: {
+        toggle:function () {
+            this.show = !this.show;
+        }
+    },
+};
 </script>
 <style>
     .img{
