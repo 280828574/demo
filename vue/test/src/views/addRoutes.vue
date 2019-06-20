@@ -32,5 +32,5 @@ export default {
 </script>
 
 <style lang="scss">
-   @import "@/assets/styles/addRoutes.scss";
+   @import "@style/addRoutes.scss";
 </style>

@@ -18,14 +18,16 @@ module.exports = {
         },
     },
     chainWebpack: config => {
+        // key,value自行定义，比如.set('@@', resolve('src/components'))
         config.resolve.alias
-            .set('@', resolve('src')); // key,value自行定义，比如.set('@@', resolve('src/components'))
+            .set('@', resolve('src')) 
+            .set('@style', resolve('src/assets/styles/')); 
     },
     productionSourceMap: false,
     css: {
         loaderOptions: {
             sass: {
-                data: `@import "@/assets/styles/common/MainBodyColor.scss";`
+                data: `@import "@style/common/MainBodyColor.scss";`
             }
         }
     }
