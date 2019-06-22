@@ -8,29 +8,29 @@
 </template>
 
 <script>
-    export default {
-        name: '',
-        data: function () {
-            return {
-                routers: [],
-                url:''
-            };
-        },
-        mounted() {
-            this.initRouterInfo();
-        },
-        methods: {
-            initRouterInfo() {
-                this.$router.options.routes.forEach((item)=>{
-                    if(item.children && this.$route.matched[0].path === item.path){
-                        item.children.forEach((list)=>{
-                            this.routers.push(list)
-                        })
-                    }
-                })
-            }
+export default {
+    name: '',
+    data: function () {
+        return {
+            routers: [],
+            url:''
+        };
+    },
+    mounted() {
+        this.initRouterInfo();
+    },
+    methods: {
+        initRouterInfo() {
+            this.$router.options.routes.forEach((item)=>{
+                if(item.children && this.$route.matched[0].path === item.path){
+                    item.children.forEach((list)=>{
+                        this.routers.push(list);
+                    });
+                }
+            });
         }
-    };
+    }
+};
 </script>
 
 <style lang="scss">

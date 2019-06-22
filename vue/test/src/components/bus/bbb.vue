@@ -15,9 +15,9 @@ export default {
     created(){
         this.$root.Bus.$on(
             'setMsg',content=>{
-                this.msg = content
+                this.msg = content;
             }
-        )
+        );
     },
 };
 </script>

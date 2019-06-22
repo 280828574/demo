@@ -8,36 +8,36 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                arr:[
-                    {
-                        name:'数据1',
-                        show_sub:false,
-                        arr:[1,2,3,4,5,1,2,3,4,5]
-                    },
-                    {
-                        name:'数据2',
-                        show_sub:false,
-                        arr:[1,2,3,4,5]
-                    },
-                    {
-                        name:'数据3',
-                        show_sub:false,
-                        arr:[1,2,3,4,5,1,2,3,4,51,2,3,4,5,1,2,3,4,5]
-                    }
-                ]
-            };
-        },
-        mounted() {
-        },
-        methods: {
-            showSub(key) {
-                this.arr[key].show_sub = !this.arr[key].show_sub;
-            }
+export default {
+    data() {
+        return {
+            arr:[
+                {
+                    name:'数据1',
+                    show_sub:false,
+                    arr:[1,2,3,4,5,1,2,3,4,5]
+                },
+                {
+                    name:'数据2',
+                    show_sub:false,
+                    arr:[1,2,3,4,5]
+                },
+                {
+                    name:'数据3',
+                    show_sub:false,
+                    arr:[1,2,3,4,5,1,2,3,4,51,2,3,4,5,1,2,3,4,5]
+                }
+            ]
+        };
+    },
+    mounted() {
+    },
+    methods: {
+        showSub(key) {
+            this.arr[key].show_sub = !this.arr[key].show_sub;
         }
-    };
+    }
+};
 </script>
 
 <style lang="scss">

@@ -4,18 +4,18 @@
     </div>
 </template>
 <script>
-    export default{
-        data: function () {
-            return {};
-        },
-        components: {},
-        created: function () {
-        },
-        mounted: function () {
-        },
-        computed: {},
-        methods: {},
-    }
+export default{
+    data: function () {
+        return {};
+    },
+    components: {},
+    created: function () {
+    },
+    mounted: function () {
+    },
+    computed: {},
+    methods: {},
+};
 </script>
 <style>
 </style>

@@ -185,21 +185,21 @@ const mutations = {
         if(arr === 'admin'){
             let routesList = [];
             state.routes.forEach((item)=>{
-                routesList.push(item)
+                routesList.push(item);
             });
             routes.options.routes = routesList;
             routes.addRoutes(routesList);
             window.sessionStorage.setItem("roles",JSON.stringify(arr));
-            return
+            return;
         }
         if(Array.isArray(arr)){
             let routesList = [];
             arr.forEach((role)=>{
                 state.routes.forEach((item)=>{
                     if(item.meta.role === role){
-                        routesList.push(item)
+                        routesList.push(item);
                     }
-                })
+                });
             });
             routes.options.routes = routesList;
             routes.addRoutes(routesList);

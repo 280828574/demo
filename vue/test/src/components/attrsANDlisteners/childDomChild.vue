@@ -6,13 +6,13 @@
     </div>
 </template>
 <script>
-    export default {
-        name:'childDomChild',
-        props:["coo"],
-        methods: {
-            startUpRocket() {
-                this.$emit("upRocket",222);
-            }
+export default {
+    name:'childDomChild',
+    props:["coo"],
+    methods: {
+        startUpRocket() {
+            this.$emit("upRocket",222);
         }
     }
+};
 </script>

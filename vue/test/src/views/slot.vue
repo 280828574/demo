@@ -19,26 +19,26 @@
 </template>
 
 <script>
-    import slotShow from '@/components/slot/slot'
+import slotShow from '@/components/slot/slot';
 
-    export default {
-        components: {
-            slotShow
-        },
-        name: '',
-        data() {
-            return {};
-        },
-        methods: {
-            abc(a) {
-                if(a>3){
-                    return 2223
-                } else {
-                    return 333
-                }
+export default {
+    components: {
+        slotShow
+    },
+    name: '',
+    data() {
+        return {};
+    },
+    methods: {
+        abc(a) {
+            if(a>3){
+                return 2223;
+            } else {
+                return 333;
             }
-        },
-    };
+        }
+    },
+};
 </script>
 
 <style lang="scss">

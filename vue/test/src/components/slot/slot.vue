@@ -25,17 +25,17 @@
 </template>
 
 <script>
-    export default {
-        name: '',
-        data() {
-            return {
-                aaa:{
-                    a:2,
-                    b:2
-                }
-            };
-        },
-    };
+export default {
+    name: '',
+    data() {
+        return {
+            aaa:{
+                a:2,
+                b:2
+            }
+        };
+    },
+};
 </script>
 
 <style lang="scss">

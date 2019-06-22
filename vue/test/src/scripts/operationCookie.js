@@ -15,10 +15,10 @@ const operationCookie = () => {
             //获取cookie，并且将获得的cookie格式化，去掉空格字符
             let cookie = document.cookie.replace(/[ ]/g,"");
             if(cookie === ''){
-                return false
+                return false;
             }
             if(!key){
-                return cookie
+                return cookie;
             }
             let arrCookie = cookie.split(";");
             let tips;
@@ -29,7 +29,7 @@ const operationCookie = () => {
                     break;   //终止for循环遍历
                 }
             }
-            return tips
+            return tips;
         },
         // 删除cookie方法
         delete:function(key){
@@ -38,7 +38,7 @@ const operationCookie = () => {
             document.cookie = key + "=v; expires =" +date.toGMTString();//设置cookie
         }
     };
-    return cookie
+    return cookie;
 };
 export default {
     operationCookie

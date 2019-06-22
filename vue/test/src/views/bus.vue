@@ -6,16 +6,28 @@
     </div>
 </template>
 <script>
-    import aaa from '@/components/bus/aaa'
-    import bbb from '@/components/bus/bbb'
+import aaa from '@/components/bus/aaa';
+import bbb from '@/components/bus/bbb';
 
-    export default {
-        components: {
-            aaa,
-            bbb
-        },
-        name: '',
-    };
+export default {
+    components: {
+        aaa,
+        bbb
+    },
+    name: '111',
+    data() {
+        return {
+            text:''
+        };
+    },
+    methods: {
+        aaa(){
+            if(this.text === '1'){
+                console.log('111');
+            }
+        }
+    },
+};
 </script>
 
 <style lang="scss">
