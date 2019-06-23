@@ -9,7 +9,7 @@
 
 <script>
 import {store} from "@/components/store";
-import bbb from "@/components/provideAndInject/bbb";
+import bbb from "@/components/provideAndInject/bbb.vue";
 
 export default {
     components: {

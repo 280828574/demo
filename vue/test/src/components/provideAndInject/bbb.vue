@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ccc from "@/components/provideAndInject/ccc";
+import ccc from "@/components/provideAndInject/ccc.vue";
 
 export default {
     components: {
