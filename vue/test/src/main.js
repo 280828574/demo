@@ -10,9 +10,11 @@ import VueParticles from 'vue-particles';
 import vueTouch from 'kim-vue-touch';
 
 Vue.config.productionTip = false;
+
 Vue.prototype.$api = api;
 Vue.prototype.$const = constant;
 Vue.prototype.$scripts = scripts;
+
 Vue.use(VueParticles);
 Vue.use(vueTouch);
 const Bus = new Vue();
