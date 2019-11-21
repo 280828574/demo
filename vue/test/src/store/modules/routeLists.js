@@ -177,6 +177,16 @@ const state = {
                 });
             }
         },
+        {
+            path: '/renderDemo',
+            name: 'render演示',
+            meta: { role: 'renderDemo' },
+            component: (resolve) => {
+                require.ensure(['@/views/renderDemo'], (require) => {
+                    resolve(require('@/views/renderDemo'));
+                });
+            }
+        },
     ]
 };
 const mutations = {
