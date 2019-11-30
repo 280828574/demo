@@ -187,6 +187,16 @@ const state = {
                 });
             }
         },
+        {
+            path: '/imgCode',
+            name: '图片验证码演示',
+            meta: { role: 'imgCode' },
+            component: (resolve) => {
+                require.ensure(['@/views/imgCode'], (require) => {
+                    resolve(require('@/views/imgCode'));
+                });
+            }
+        },
     ]
 };
 const mutations = {

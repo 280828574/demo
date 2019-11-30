@@ -9,6 +9,8 @@ import store from '@/store';
 import VueParticles from 'vue-particles';
 import vueTouch from 'kim-vue-touch';
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 Vue.config.productionTip = false;
 
 Vue.prototype.$api = api;
@@ -17,6 +19,8 @@ Vue.prototype.$scripts = scripts;
 
 Vue.use(VueParticles);
 Vue.use(vueTouch);
+Vue.use(ElementUI);
+
 const Bus = new Vue();
 // Waypoint plugin
 new Vue({
